@@ -1,4 +1,4 @@
-package com.jmonteiro.nutrySport.config.auth;
+package com.jmonteiro.nutrySport.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

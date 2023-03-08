@@ -1,4 +1,4 @@
-package com.jmonteiro.nutrySport.config.auth;
+package com.jmonteiro.nutrySport.auth;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,13 +15,13 @@ public class AuthenticationController {
     private final AuthenticationService service;
 
     @PostMapping("/register")
-    public ResponseEntity<AuthenticationResponse> Register(
+    public ResponseEntity<AuthenticationResponse> register(
             @RequestBody RegisterRequest request
     ){
         return ResponseEntity.ok(service.register(request));
     }
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> Authenticate(
+    public ResponseEntity<AuthenticationResponse> authenticate(
             @RequestBody AuthenticationRequest request
     ){
         return ResponseEntity.ok(service.authenticate(request));

@@ -1,4 +1,4 @@
-package com.jmonteiro.nutrySport.config.auth;
+package com.jmonteiro.nutrySport.auth;
 
 import com.jmonteiro.nutrySport.config.JwtService;
 import com.jmonteiro.nutrySport.user.Role;
