@@ -1,4 +1,4 @@
-package com.jmonteiro.nutrySport.config;
+package com.jmonteiro.nutrySport.business.config;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -23,7 +23,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private  final UserDetailsService userDetailsService;
     @Override
     protected void doFilterInternal(
-                @NonNull  HttpServletRequest request,
+                @NonNull HttpServletRequest request,
                 @NonNull HttpServletResponse response,
                 @NonNull FilterChain filterChain)
             throws ServletException, IOException {

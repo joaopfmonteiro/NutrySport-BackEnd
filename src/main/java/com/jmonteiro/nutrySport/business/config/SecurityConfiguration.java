@@ -1,4 +1,4 @@
-package com.jmonteiro.nutrySport.config;
+package com.jmonteiro.nutrySport.business.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

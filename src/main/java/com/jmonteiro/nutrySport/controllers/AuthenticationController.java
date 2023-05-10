@@ -1,5 +1,9 @@
-package com.jmonteiro.nutrySport.auth;
+package com.jmonteiro.nutrySport.controllers;
 
+import com.jmonteiro.nutrySport.business.presistant.user.auth.AuthenticationRequest;
+import com.jmonteiro.nutrySport.business.presistant.user.auth.AuthenticationResponse;
+import com.jmonteiro.nutrySport.business.presistant.user.auth.AuthenticationService;
+import com.jmonteiro.nutrySport.business.presistant.user.auth.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +24,7 @@ public class AuthenticationController {
     ){
         return ResponseEntity.ok(service.register(request));
     }
-    @PostMapping("/authenticate")
+    @PostMapping("/authenticat")
     public ResponseEntity<AuthenticationResponse> authenticate(
             @RequestBody AuthenticationRequest request
     ){

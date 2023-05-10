@@ -1,4 +1,4 @@
-package com.jmonteiro.nutrySport.auth;
+package com.jmonteiro.nutrySport.business.presistant.user.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,4 +14,5 @@ public class RegisterRequest {
     private String lastname;
     private String email;
     private String password;
+    private String userName;
 }

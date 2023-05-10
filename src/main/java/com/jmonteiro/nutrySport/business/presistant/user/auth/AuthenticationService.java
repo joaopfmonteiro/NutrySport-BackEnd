@@ -1,9 +1,9 @@
-package com.jmonteiro.nutrySport.auth;
+package com.jmonteiro.nutrySport.business.presistant.user.auth;
 
-import com.jmonteiro.nutrySport.config.JwtService;
-import com.jmonteiro.nutrySport.user.Role;
-import com.jmonteiro.nutrySport.user.User;
-import com.jmonteiro.nutrySport.user.UserRepository;
+import com.jmonteiro.nutrySport.business.config.JwtService;
+import com.jmonteiro.nutrySport.business.presistant.user.Role;
+import com.jmonteiro.nutrySport.business.presistant.user.UserEntity;
+import com.jmonteiro.nutrySport.business.presistant.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -19,10 +19,11 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
     public AuthenticationResponse register(RegisterRequest request) {
-        var user = User.builder()
+        var user = UserEntity.builder()
                 .firstname(request.getFirstname())
                 .lastName(request.getLastname())
                 .email(request.getEmail())
+                .userName(request.getUserName())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
                 .build();

@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/nutrySport_db
     username: postgres
-    password: Kayakayakaya10.
+    password: postgresAdmin
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:

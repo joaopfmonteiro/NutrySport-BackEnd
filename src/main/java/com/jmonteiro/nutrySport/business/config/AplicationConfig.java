@@ -1,6 +1,6 @@
-package com.jmonteiro.nutrySport.config;
+package com.jmonteiro.nutrySport.business.config;
 
-import com.jmonteiro.nutrySport.user.UserRepository;
+import com.jmonteiro.nutrySport.business.presistant.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

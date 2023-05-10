@@ -1,4 +1,4 @@
-package com.jmonteiro.nutrySport.config;
+package com.jmonteiro.nutrySport.business.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -17,7 +17,7 @@ import java.util.function.Function;
 @Service
 public class JwtService{
 
-    private static final String SECRET_KEY = "763979244226452948404D635166546A576E5A7234753777217A25432A462D4A";
+    private static final String SECRET_KEY = "614E645266556A586E3272357538782F413F4428472B4B6250655368566B5970";
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }
@@ -44,9 +44,9 @@ public class JwtService{
                 .setClaims(extraClaims)
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis())) //  is used to set the issue time of the JWT to the current time
+                .signWith(getSignInKey(), SignatureAlgorithm.HS256) // method is used to sign the JWT with a signing key
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24)) // used to control expiration time of the JSON Web Token
-                .signWith(getSignInKey(), SignatureAlgorithm.ES256) // method is used to sign the JWT with a signing key
-                .compact(); //compact is used to generate the final JWT as a sting
+                .compact(); //compact is used to generate the final JWT as a string
     }
     private Claims extractAllClaims(String token){
         return Jwts
